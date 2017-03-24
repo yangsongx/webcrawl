@@ -39,7 +39,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/yang/src/mysamplecode/web-crawl/runtime"
+VIRTUAL_ENV="/home/yang/src/webcrawl/runtime"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

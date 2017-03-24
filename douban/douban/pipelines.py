@@ -1,5 +1,7 @@
 # -*- coding: utf-8 -*-
 
+import pymongo
+
 from scrapy.exceptions import DropItem
 
 # Define your item pipelines here
@@ -9,5 +11,13 @@ from scrapy.exceptions import DropItem
 
 
 class DoubanPipeline(object):
+
+    def __init__(self):
+        #usually prepare the DB
+        conn = pymongo.MongoClient("172.20.20.239")
+        self.db = conn["douban"]
+
     def process_item(self, item, spider):
+        # Here simple insert
+        self.db.data.insert(dict(item))
         return item
